@@ -20,15 +20,18 @@
     <td><?= $barang['harga']?></td>
     <?php
     if($barang['status']==1){
+        if($barang['stok']>=1){
         $status="Ready";
     }else{
         $status="Sold Out";
     }
+}
     ?>
     <td><?= $status ?></td>
     <td><?= $barang['nmdist']?></td>
+    <td><a href="<?= $base_url.'jual/add/'.$barang['idbarang']?>"> Beli</a></td>
     <td>Ubah</td>
     <td>Hapus</td>
 </tbody>
-<?php } ?>
+<?php }?>
 </table>
