@@ -7,17 +7,21 @@ foreach($data['jual'] as $jual){
         $kd="0001";
     }
     date_default_timezone_set('asia/jakarta');
-    $kodejual=date('ymd').$kd;
+    $kodejual=date('mdy').$kd;
 }
 ?>
 <script type="text/javascript">
-    funcion startCalc(){
+    function startCalc(){
         interval=setInterval("calc()",1);
     }
     function calc(){
     harga=document.jual.harga.value;
     qty=document.jual.jmlbarang.value;
-    document.jual.totalharga.value=(harga*1)*(qty*1);
+    bayar=document.jual.bayar.value;
+    total=document.jual.totalharga;
+    kembalian=document.jual.kembali;
+    total.value=(harga*1)*(qty*1);
+    kembalian.value=(bayar*1)-(total.value*1);
     }
     function stopCalc(){
         clearInterval(interval);
@@ -25,14 +29,14 @@ foreach($data['jual'] as $jual){
     </script>
 <caption><h1>DATA JUAL</h1></caption>
 <div>
-    <form action="" method="post" name="jual">
+    <form action="<?= $base_url?>jual/save" method="post" name="jual">
     <div>
         <label for="">Id Jual</label>
         <input type="text" name="idjual" value="<?= $kodejual?>"readonly>
 </div>
 <div>
     <label for="">Tanggal Transaksi</label>
-    <input type="date" name="tgljual" id="" placholder="yyyy-mm-dd" required>  
+    <input type="date" name="tgljual" id="" value="<?= date('d-m-yyyy')?>" readonly>  
 </div>
 <div>
 <?php
@@ -58,11 +62,15 @@ foreach ($data ['brg'] as $brg ) {
 </div>
 <div>
     <label for="">Bayar</label>
-    <input type="number" name="bayar" id="" required>
+    <input type="number" name="bayar" id="" onfocus="starCalc()" onblur="stopCalc()" required>
 </div>
 <div>
     <label for="">Kembalian</label>
-    <input type="number" name="kembalian" id="" readonly>
+    <input type="number" name="kembali" id="" onfocus="starCalc()" onblur="stopCalc()" readonly>
 </div>
+<div>
+    <button type="submit">Simpan</button>
+</div>
+
 </form>
 </div>

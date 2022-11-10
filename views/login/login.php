@@ -1,9 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="<?= $base_url ?>/assets/vendors/metro4/css/metro-all.min.css">
+    <link rel="stylesheet" href="<?= $base_url ?>/assets/css/index.css">
+  <title>Document</title>
+</head>
+<body>
+  
+
 <!-- CSS LOGIN -->
 <link rel="stylesheet" href="assets/css/styleLogin.css">
 <title><?= $data['title']; ?></title>
 <main class="form-signin w-100 m-auto">
     <form action="<?= $base_url;?>c_login/Send" method="POST">
-      <img class="mb-4 rounded-circle" src="assets/img/logo.png" alt="" width="78" height="62">
+      <img class="mb-4 rounded-circle" src="assets/img/bbm.jpg" alt="" width="78" height="62">
       <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
       <?php 
@@ -29,7 +42,7 @@
 
       <div class="form-floating">
         <input type="email" name ="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email address</label>
+        <label for="floatingInput">Email </label>
       </div>
       <div class="form-floating">
         <input type="password" name ="password" class="form-control" id="floatingPassword" placeholder="Password">
@@ -45,3 +58,12 @@
       <p class="mt-5 mb-3 text-muted">&copy; 2022–2023</p>
     </form>
   </main>
+  </body>
+</html>
+<script src="<?= $base_url ?>/assets/vendors/jquery/jquery-3.4.1.min.js"></script>
+<script src="<?= $base_url ?>/assets/vendors/chartjs/Chart.bundle.min.js"></script>
+<script src="<?= $base_url ?>/assets/vendors/qrcode/qrcode.min.js"></script>
+<script src="<?= $base_url ?>/assets/vendors/jsbarcode/JsBarcode.all.min.js"></script>
+<script src="<?= $base_url ?>/assets/vendors/ckeditor/ckeditor.js"></script>
+<script src="<?= $base_url ?>/assets/vendors/metro4/js/metro.min.js"></script>
+<script src="<?= $base_url ?>/assets/js/index.js"></script>

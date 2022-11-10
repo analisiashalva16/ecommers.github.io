@@ -30,6 +30,7 @@
     <td><?= $status ?></td>
     <td><?= $barang['nmdist']?></td>
     <td><a href="<?= $base_url.'jual/add/'.$barang['idbarang']?>"> Beli</a></td>
+    <td><a href="<?= $base_url.'barang/edit/'.$barang['idbarang']?>"> Ubah</a></td>
     <td>Ubah</td>
     <td>Hapus</td>
 </tbody>

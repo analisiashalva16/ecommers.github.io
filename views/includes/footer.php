@@ -1,4 +1,5 @@
 </div>
+</div>
 <!-- jQuery first, then Metro UI JS -->
 <script src="<?= $base_url ?>/assets/vendors/jquery/jquery-3.4.1.min.js"></script>
 <script src="<?= $base_url ?>/assets/vendors/chartjs/Chart.bundle.min.js"></script>
