@@ -18,13 +18,13 @@
                 </a>
                 <div class="app-bar-container">
                     <a href="#" class="app-bar-item">
-                        <img src="images/jek_vorobey.jpg" class="avatar">
-                        <span class="ml-2 app-bar-name">analisiashalva16</span>
+                        <img src="<?= $base_url ?>assets/img/bem.jpg" class="avatar">
+                        <span class="ml-2 app-bar-name">analisiashalva_16</span>
                     </a>
                     <div class="user-block shadow-1" data-role="collapse" data-collapsed="true">
                         <div class="bg-darkCyan fg-white p-2 text-center">
-                            <img src="images/jek_vorobey.jpg" class="avatar">
-                            <div class="h4 mb-0">analisiashalva16</div>
+                            <img src="<?= $base_url ?>assets/img/bem.jpg" class="avatar">
+                            <div class="h4 mb-0">analisiashalva_16</div>
                             <div>Pirate captain</div>
                         </div>
                         <div class="bg-white d-flex flex-justify-between flex-equal-items p-2">
@@ -34,7 +34,7 @@
                         </div>
                         <div class="bg-white d-flex flex-justify-between flex-equal-items p-2 bg-light">
                             <button class="button mr-1">Profile</button>
-                            <button class="button ml-1">Sign out</button>
+                           <a href="<?=$base_url?>c_login/login"> <button class="button ml-1">Sign out</button></a>
                         </div>
                     </div>
                 </div>

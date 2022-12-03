@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Metro 4 -->
-    <link rel="stylesheet" href="<?= $base_url ?>/assets/vendors/metro4/css/metro-all.min.css">
-    <link rel="stylesheet" href="<?= $base_url ?>/assets/css/index.css">
+    <link rel="stylesheet" href="<?=$base_url?>/assets/vendors/metro4/css/metro-all.min.css">
+    <link rel="stylesheet" href="<?=$base_url?>/assets/css/index.css">
 
     <title>Aplikasi Ecommers</title>
 

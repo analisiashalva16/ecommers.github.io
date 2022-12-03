@@ -1,4 +1,4 @@
-<?php
+<?php 
 foreach($data['jual'] as $jual){
     if($jual>0){
         $no=((int)$jual['kdjual'])+1;
@@ -8,69 +8,68 @@ foreach($data['jual'] as $jual){
     }
     date_default_timezone_set('asia/jakarta');
     $kodejual=date('mdy').$kd;
-}
+    }
 ?>
 <script type="text/javascript">
     function startCalc(){
         interval=setInterval("calc()",1);
-    }
-    function calc(){
-    harga=document.jual.harga.value;
-    qty=document.jual.jmlbarang.value;
-    bayar=document.jual.bayar.value;
-    total=document.jual.totalharga;
-    kembalian=document.jual.kembali;
-    total.value=(harga*1)*(qty*1);
-    kembalian.value=(bayar*1)-(total.value*1);
-    }
-    function stopCalc(){
-        clearInterval(interval);
-    }
-    </script>
-<caption><h1>DATA JUAL</h1></caption>
+        }
+        function calc(){
+            harga=document.jual.harga.value;
+            qty=document.jual.jmlbarang.value;
+            bayar=document.jual.bayar.value;
+            total=document.jual.totalharga;
+            kembalian=document.jual.kembali;
+            total.value=(harga*1)*(qty*1);
+            kembalian.value=(bayar*1)-(total.value*1);
+            }
+            function stopCalc(){
+                clearInterval(interval);
+            }
+         </script>
+<caption><h1>Data Jual</h1></caption>
 <div>
     <form action="<?= $base_url?>jual/save" method="post" name="jual">
+     <div>
+    <label for="">Id Jual</label>
+    <input type="text" name="idjual" id="" value="<?= $kodejual ?>" readonly>
+        <div>
+</div>
+<label for="">Tanggal Transaksi</label>
+<input type="date" name="tgljual" placholder="yyyy-mm-dd" value="<?= date('d-m-yyyy')?>" readonly>
+<div>
     <div>
-        <label for="">Id Jual</label>
-        <input type="text" name="idjual" value="<?= $kodejual?>"readonly>
-</div>
-<div>
-    <label for="">Tanggal Transaksi</label>
-    <input type="date" name="tgljual" id="" value="<?= date('d-m-yyyy')?>" readonly>  
-</div>
-<div>
-<?php
-foreach ($data ['brg'] as $brg ) {
-?>
-</div>
-<div>
-    <label for="">Nama Barang</label>
-    <input type="text" name="idbarang" id="" value="<?= $brg['idbarang']?>" hidden>
-    <input type="text" name="nmbarang" id="" value="<?= $brg['nmbarang']?>" readonly>
-    <div>
-    <input type="text" name="harga" id="" value="<?=$brg['harga']?>" onfocus="startCalc()" onblur="stopCalc()" readonly>
+        <div>
+            <?php 
+            foreach ($data['brg'] as $brg) {
+            ?>
+        </div>
+        <label for="">Nama Barang</label>
+        <input type="text" name="idbarang" id=""  value="<?= $brg['idbarang']?>" hidden>
+        <input type="text" name="nmbarang" id=""  value="<?= $brg['nmbarang']?>" readonly>
+        <div>
+        <input type="text" name="harga" value="<?= $brg['harga']?>" onfocus="startCalc()" onblur="stopCalc()" readonly>
 </div>
 <?php } ?>
-</div>
-<div>
-    <label for="">Qty</label>
-    <input type="number" name="jmlbarang" id="" onfocus="startCalc()" onblur="stopCalc()" required>
-</div>
-<div>
-    <label for="">Total Harga</label>
-    <input type="number" name="totalharga" id="" onfocus="startCalc()" onblur="stopCalc()" readonly>
-</div>
-<div>
-    <label for="">Bayar</label>
-    <input type="number" name="bayar" id="" onfocus="starCalc()" onblur="stopCalc()" required>
-</div>
-<div>
-    <label for="">Kembalian</label>
-    <input type="number" name="kembali" id="" onfocus="starCalc()" onblur="stopCalc()" readonly>
-</div>
-<div>
-    <button type="submit">Simpan</button>
-</div>
-
+    </div>
+    <div>
+       <label for="">Qty</label>
+       <input type="number" name="jmlbarang" id="" onfocus="startCalc()" onblur="stopCalc()" required>
+    </div>
+    <div>
+        <label for="">Total Harga</label>
+        <input type="number" name="totalharga" id="" onfocus="startCalc()" onblur="stopCalc()" readonly>
+    </div>
+    <div>
+        <label for="">Bayar</label>
+        <input type="number" name="bayar" id="" onfocus="startCalc()" onblur="stopCalc()" required>
+    </div>
+    <div>
+        <label for="">kembalian</label>
+        <input type="number" name="kembali" id="" onfocus="startCalc()" onblur="stopCalc()" readonly>
+    </div>
+    <div>
+        <button type="submit">Simpan</button>
+    </div>
 </form>
 </div>
